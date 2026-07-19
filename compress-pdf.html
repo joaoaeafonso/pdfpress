@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compress PDF Files Losslessly — Free Local Tool | The Local PDF</title>
+  <meta name="description" content="Reduce your PDF file size without losing quality. Repack your PDF structure locally in your browser. Files never leave your device.">
+  <link rel="canonical" href="https://thelocalpdf.com/compress-pdf.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true"></div>
+
+<div class="wrap">
+  <nav class="nav">
+    <div class="brand">
+      <div class="mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      </div>
+      The Local PDF
+    </div>
+    <div class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>Files never leave your device</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>PDF tools that <em>never see</em> your files</h1>
+    <p>Merge, compress, and shrink PDFs right here in your browser. Free, instant, and completely private — nothing is ever uploaded.</p>
+    <div class="trust">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>100% on-device</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>No sign-up</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Free forever</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT -->
+  <div class="ad banner" aria-label="Advertisement">Advertisement</div>
+
+  <nav class="seg" aria-label="Tools">
+    <a href="index.html" class="seg-link">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg>
+      <span>Merge to PDF</span>
+    </a>
+    <a href="compress-pdf.html" class="seg-link" aria-current="page">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
+      <span>Compress</span>
+    </a>
+    <a href="shrink-pdf.html" class="seg-link">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg>
+      <span>Shrink to size</span>
+    </a>
+  </nav>
+
+  <section class="tool" id="tool-compress">
+    <div class="card">
+      <h2>Compress a PDF — lossless</h2>
+      <p class="sub">Repacks the PDF's internal structure without touching pages, text, or image quality. Great for text-heavy documents; photo-heavy PDFs shrink less — use <strong>Shrink to size</strong> for those.</p>
+
+      <label class="drop" id="drop-compress" tabindex="0">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <div class="t1">Drop a PDF here or <b>browse</b></div>
+        <div class="t2">one .pdf file — quality stays identical</div>
+        <input type="file" id="input-compress" accept="application/pdf,.pdf">
+      </label>
+
+      <ul class="files" id="list-compress"></ul>
+
+      <div class="options">
+        <button class="run" id="run-compress" disabled>
+          Compress PDF
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+
+      <div class="progress" id="prog-compress"><div class="bar"><div></div></div><div class="msg"></div></div>
+      <div class="result" id="out-compress"></div>
+    </div>
+  </section>
+
+  <!-- AD SLOT -->
+  <div class="ad rect" aria-label="Advertisement">Advertisement</div>
+
+  <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Are my files really private?</summary>
+      <p>Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they're gone. You can even load this page, disconnect from the internet, and it still works.</p>
+    </details>
+    <details>
+      <summary>What's the difference between Compress and Shrink?</summary>
+      <p><strong>Compress</strong> is lossless: it repacks the PDF's internal structure so nothing about the content changes — same text, same image quality. Savings are modest but free. <strong>Shrink</strong> is lossy: it re-renders pages as compressed images to hit a target file size. It saves far more space, but text stops being selectable and fine detail is reduced.</p>
+    </details>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong>The Local PDF</strong> · free PDF utilities, entirely in your browser<br>
+      <span style="font-size:12.5px">
+        <a href="privacy.html" style="color:inherit">Privacy Policy</a> ·
+        <a href="terms.html" style="color:inherit">Terms of Use</a> ·
+        <a href="mailto:hello@thelocalpdf.com" style="color:inherit">Contact</a>
+      </span>
+    </div>
+    <div class="lock">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      No uploads · no tracking of your files
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
