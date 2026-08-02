@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Scanned PDFs Are Enormous — and How to Fix It | The Local PDF</title>
+  <meta name="description" content="The arithmetic of DPI and colour depth, the scanner settings that quietly ruin files, and what to do when a huge scan arrives from someone else.">
+  <link rel="canonical" href="https://thelocalpdf.com/guides/scanned-pdf-file-size.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="Why Scanned PDFs Are Enormous — and How to Fix It | The Local PDF">
+  <meta property="og:description" content="The arithmetic of DPI and colour depth, the scanner settings that quietly ruin files, and what to do when a huge scan arrives from someone else.">
+  <meta property="og:url" content="https://thelocalpdf.com/guides/scanned-pdf-file-size.html">
+  <meta name="twitter:card" content="summary">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
+          crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "Article",
+      "headline": "Why Scanned PDFs Are Enormous — and How to Fix It",
+      "description": "The arithmetic of DPI and colour depth, the scanner settings that quietly ruin files, and what to do when a huge scan arrives from someone else.",
+      "url": "https://thelocalpdf.com/guides/scanned-pdf-file-size.html",
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "wordCount": 792,
+      "author": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thelocalpdf.com/guides/scanned-pdf-file-size.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://thelocalpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://thelocalpdf.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Why scans are huge",
+          "item": "https://thelocalpdf.com/guides/scanned-pdf-file-size.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      The Local PDF
+    </a>
+    <div class="mainnav">
+      <a href="../index.html">Tools</a>
+      <a href="../guides/index.html" class="on">Guides</a>
+      <a href="../about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
+    </div>
+  </nav>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="../guides/index.html">Guides</a><span class="sep">/</span><span aria-current="page">Why scans are huge</span></nav>
+  <article class="post prose">
+    <header>
+      <h1>Why Scanned PDFs Are Enormous — and How to Fix It</h1>
+      <p class="standfirst">Three sheets of A4 should not be a 48&nbsp;MB file. Two settings decide whether they are.</p>
+      <div class="post-meta"><span class="tag">Scanning</span><span>Updated 2 August 2026</span><span>7 min read</span></div>
+    </header>
+
+    <div class="keybox">
+      <h2>In short</h2>
+      <ul>
+        <li>Scanning in colour at 600 DPI can produce a file thirty times larger than it needs to be.</li>
+        <li>200–300 DPI greyscale is enough for almost any document that is not a photograph.</li>
+        <li>Fixing the scanner settings is better than compressing the result afterwards.</li>
+      </ul>
+    </div>
+
+    <p>Three sheets of A4 come out of the scanner as a 48 MB PDF. The same three sheets, scanned by a colleague, are 900 KB. Neither person changed anything deliberately. The difference is entirely in settings that most scanning software hides behind an <em>Advanced</em> button.</p>
+
+    <h2>The arithmetic behind a huge scan</h2>
+    <p>A scan is a grid of pixels, and the grid grows with the square of the resolution. An A4 page is 8.27 × 11.69 inches, so:</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Resolution</th><th>Pixels per A4 page</th><th>Raw colour data</th><th>Typical JPEG</th></tr></thead>
+        <tbody>
+          <tr><td>150 DPI</td><td class="num">1.7 million</td><td class="num">5 MB</td><td class="num">~150 KB</td></tr>
+          <tr><td>300 DPI</td><td class="num">7.0 million</td><td class="num">21 MB</td><td class="num">~600 KB</td></tr>
+          <tr><td>600 DPI</td><td class="num">27.9 million</td><td class="num">84 MB</td><td class="num">~2.5 MB</td></tr>
+          <tr><td>1200 DPI</td><td class="num">111 million</td><td class="num">334 MB</td><td class="num">~9 MB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Doubling the resolution quadruples the data. Now add the second multiplier: colour depth. A colour pixel needs three bytes, greyscale needs one, and pure black-and-white needs one bit. Scanning a black-ink-on-white-paper document in full colour therefore costs roughly 24 times more than it needs to — and colour scans of white paper compress badly too, because the sensor records thousands of slightly different off-whites where a greyscale scan would record one flat tone.</p>
+
+    <h2>Settings that actually matter</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>What you are scanning</th><th>Resolution</th><th>Mode</th></tr></thead>
+        <tbody>
+          <tr><td>Printed text, letters, invoices</td><td>200–300 DPI</td><td>Greyscale, or black &amp; white</td></tr>
+          <tr><td>Documents with signatures or stamps</td><td>300 DPI</td><td>Greyscale (colour only if the colour is evidence)</td></tr>
+          <tr><td>Forms with coloured fields</td><td>200 DPI</td><td>Colour</td></tr>
+          <tr><td>Photographs and artwork</td><td>600 DPI</td><td>Colour</td></tr>
+          <tr><td>Anything going to a commercial printer</td><td>600 DPI</td><td>Colour</td></tr>
+          <tr><td>Archival or legal reproduction</td><td>300–400 DPI</td><td>Colour, follow the archive's spec</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>300 DPI is the honest default for documents. It is the threshold above which OCR accuracy stops improving meaningfully, it prints cleanly, and it survives a moderate zoom on screen. 600 DPI is for reproducing images, not for reading words.</p>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>Two settings that quietly ruin files</h2>
+    <p><strong>"Scan as image" on a text document.</strong> Many multifunction printers default to producing a PDF that is one photograph per page with no text layer at all. The document looks fine and is completely unsearchable. If your scanner offers <em>searchable PDF</em> or <em>OCR</em>, turn it on: you get a text layer behind the image, at almost no size cost, and the file becomes findable and quotable.</p>
+    <p><strong>Automatic colour detection.</strong> A single coloured logo in the letterhead can flip an entire multi-page scan into colour mode. If the document is essentially monochrome, set greyscale explicitly rather than trusting the detector.</p>
+
+    <h2>Fixing a scan you have already been sent</h2>
+    <p>Often the file arrives from someone else and rescanning is not an option. In that case the order is:</p>
+    <ol>
+      <li><strong>Try <a href="../compress-pdf.html">lossless compression</a> first.</strong> It usually recovers only a few percent on a scan, but it costs nothing and occasionally surprises you when the scanner produced a badly structured file.</li>
+      <li><strong>Re-render to a target size.</strong> <a href="../shrink-pdf.html">Shrinking</a> is unusually effective on scans, precisely because the original is over-resolved. Cutting a 600 DPI colour scan to a 1600-pixel page at quality 75 typically removes 90% of the file and looks unchanged on screen.</li>
+      <li><strong>Check the small things afterwards.</strong> Stamps, handwritten initials, and figures in tables are what suffer first.</li>
+    </ol>
+    <p>Be aware that re-rendering discards any OCR text layer. If the scan was searchable, it will not be afterwards. When searchability matters more than size, keep the original and split the document instead.</p>
+
+    <h2>Photographing instead of scanning</h2>
+    <p>A phone camera is a 12-megapixel sensor pointed at a sheet of paper — comparable to scanning at roughly 400 DPI, with worse lighting and a perspective problem. Phone scanning apps compensate by detecting page edges, correcting the angle, and flattening the background to white, which both improves legibility and shrinks the file dramatically. Using the raw camera photos instead produces files several times larger for a visibly worse result.</p>
+    <p>If you do end up with a folder of photographs, <a href="../index.html">merging them into one PDF</a> in the right order is usually the last step. Our guide on <a href="../guides/merge-phone-photos-into-one-pdf.html">turning phone photos into a clean PDF</a> covers the details.</p>
+
+    <div class="tool-cta">
+      <div>
+        <strong>Already stuck with a 50 MB scan?</strong>
+        <p>Set a target size and let the shrink tool find the best quality that fits under it.</p>
+      </div>
+      <a class="go" href="../shrink-pdf.html">Shrink the scan →</a>
+    </div>
+
+  <div class="byline">
+    <span class="av">LP</span>
+    <p><strong>The Local PDF team</strong><br>
+    We build and maintain the browser-based tools on this site. Everything we publish is written from the same place the tools come from: working with real documents, on real deadlines, on ordinary hardware. Corrections and questions are welcome at <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>.</p>
+  </div>
+  </article>
+  <section class="related">
+    <h2>Related guides</h2>
+    <div class="cards">
+      <a class="cardlink" href="../guides/merge-phone-photos-into-one-pdf.html"><span class="eyebrow">Guide</span><h3>Phone photos into one clean PDF</h3><p>Shooting, ordering, and rotating so the result looks deliberate.</p><span class="more">Read →</span></a>
+      <a class="cardlink" href="../guides/reduce-pdf-size-for-email.html"><span class="eyebrow">Guide</span><h3>Getting under an email limit</h3><p>What to try, in which order, and when to stop.</p><span class="more">Read →</span></a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="../index.html">Merge files into one PDF</a>
+        <a href="../compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="../shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="../guides/index.html">All guides</a>
+        <a href="../guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="../guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="../guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="../about.html">About &amp; contact</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lossless vs Lossy PDF Compression, Explained Properly | The Local PDF</title>
+  <meta name="description" content="Two operations with almost nothing in common. Where the bytes in a PDF live, which technique reaches them, and why lossy compression can make a file bigger.">
+  <link rel="canonical" href="https://thelocalpdf.com/guides/lossless-vs-lossy-pdf-compression.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="Lossless vs Lossy PDF Compression, Explained Properly | The Local PDF">
+  <meta property="og:description" content="Two operations with almost nothing in common. Where the bytes in a PDF live, which technique reaches them, and why lossy compression can make a file bigger.">
+  <meta property="og:url" content="https://thelocalpdf.com/guides/lossless-vs-lossy-pdf-compression.html">
+  <meta name="twitter:card" content="summary">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
+          crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "Article",
+      "headline": "Lossless vs Lossy PDF Compression, Explained Properly",
+      "description": "Two operations with almost nothing in common. Where the bytes in a PDF live, which technique reaches them, and why lossy compression can make a file bigger.",
+      "url": "https://thelocalpdf.com/guides/lossless-vs-lossy-pdf-compression.html",
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "wordCount": 743,
+      "author": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thelocalpdf.com/guides/lossless-vs-lossy-pdf-compression.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://thelocalpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://thelocalpdf.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lossless vs lossy",
+          "item": "https://thelocalpdf.com/guides/lossless-vs-lossy-pdf-compression.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      The Local PDF
+    </a>
+    <div class="mainnav">
+      <a href="../index.html">Tools</a>
+      <a href="../guides/index.html" class="on">Guides</a>
+      <a href="../about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
+    </div>
+  </nav>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="../guides/index.html">Guides</a><span class="sep">/</span><span aria-current="page">Lossless vs lossy</span></nav>
+  <article class="post prose">
+    <header>
+      <h1>Lossless vs Lossy PDF Compression, Explained Properly</h1>
+      <p class="standfirst">One rewrites the file's plumbing. The other trades quality for size. Choosing wrongly wastes time — or ruins a document.</p>
+      <div class="post-meta"><span class="tag">Compression</span><span>Updated 2 August 2026</span><span>7 min read</span></div>
+    </header>
+
+    <div class="keybox">
+      <h2>In short</h2>
+      <ul>
+        <li>Lossless compression rewrites the file's structure; the visible document is untouched.</li>
+        <li>Lossy compression re-encodes the images — or turns whole pages into images.</li>
+        <li>Which one helps depends on where your file's bytes are, not on how big it is.</li>
+      </ul>
+    </div>
+
+    <p>"Compress a PDF" describes two operations with almost nothing in common. One is housekeeping. The other is a deliberate trade of quality for size. Choosing the wrong one wastes time at best and destroys a document's usefulness at worst.</p>
+
+    <h2>Where the bytes actually are</h2>
+    <p>A PDF is a container of numbered objects: page descriptions, embedded fonts, images, annotations, metadata, and a cross-reference table pointing at all of them. Break a typical file down and the weight sits in predictable places.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Document</th><th>Where the size comes from</th><th>What can reach it</th></tr></thead>
+        <tbody>
+          <tr><td>Word export, 20 pages</td><td>Fonts and structural overhead</td><td>Lossless</td></tr>
+          <tr><td>Report revised 30 times</td><td>Stale incremental updates, orphaned objects</td><td>Lossless</td></tr>
+          <tr><td>Colour scan, 10 pages</td><td>Ten large JPEG or JBIG2 images</td><td>Lossy only</td></tr>
+          <tr><td>Photo brochure</td><td>High-resolution photographs</td><td>Lossy only</td></tr>
+          <tr><td>Slide deck</td><td>Repeated template graphics plus screenshots</td><td>Both, partly</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>This is the whole decision. If the weight is structural, lossless compression removes it for free. If the weight is pixels, only re-encoding pixels will help, and re-encoding pixels always costs something.</p>
+
+    <h2>What lossless compression does</h2>
+    <p>Producers write PDFs carelessly. Word, scanner drivers, and export plugins each have habits that leave a file larger than it needs to be, and repeated editing compounds them. A lossless pass cleans up four things:</p>
+    <ul>
+      <li><strong>Object packing.</strong> Thousands of small objects are grouped into compressed object streams instead of sitting individually with their own overhead.</li>
+      <li><strong>The cross-reference table.</strong> Every save can append a new table while leaving the old ones in place. Rewriting produces one current table.</li>
+      <li><strong>Orphans.</strong> Deleted pages, replaced logos, and abandoned annotations often remain in the file — invisible, still counted.</li>
+      <li><strong>Uncompressed streams.</strong> Page content stored as plain text gets deflated.</li>
+    </ul>
+    <p>Nothing visible changes. Text stays selectable, images keep their exact encoding, fonts stay embedded, links keep working, and print output is identical. The catch is the ceiling: once the structure is clean, there is nothing left to reclaim, and a second pass will save zero.</p>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>What lossy compression does</h2>
+    <p>Lossy techniques go after the pixels. Serious PDF software does this selectively — downsampling images above a resolution threshold, converting them to JPEG at a chosen quality, sometimes converting colour scans to greyscale. Browser-based tools, including <a href="../shrink-pdf.html">the shrink tool here</a>, take a blunter route: render each page as it would be displayed, save that rendering as a JPEG, and rebuild the document from those images.</p>
+    <p>The blunt approach has one large advantage — it works on any PDF, however strangely constructed — and one large cost: everything that was structured data becomes appearance.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th></th><th>Lossless</th><th>Lossy (page re-render)</th></tr></thead>
+        <tbody>
+          <tr><td>Typical saving on text PDFs</td><td class="num">5–40%</td><td>Often negative</td></tr>
+          <tr><td>Typical saving on scans</td><td class="num">0–5%</td><td class="num">80–95%</td></tr>
+          <tr><td>Text stays selectable</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Searchable and screen-reader friendly</td><td>Yes</td><td>No</td></tr>
+          <tr><td>Links, bookmarks, form fields</td><td>Preserved</td><td>Lost</td></tr>
+          <tr><td>Can hit an exact target size</td><td>No</td><td>Yes</td></tr>
+          <tr><td>Reversible</td><td>Nothing to reverse</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The counter-intuitive case</h3>
+    <p>Running a lossy tool over a clean text document usually makes it <em>bigger</em>. A page of text is a compact set of drawing instructions referencing an embedded font; the same page as a 1600-pixel JPEG is a few hundred kilobytes of photographic data. If a shrink attempt returns a larger file, that is the reason, and the original is the file you want.</p>
+
+    <h2>Choosing, in one paragraph</h2>
+    <p>If the document contains real text and you need it smaller, compress losslessly and accept whatever you get. If the document is scans or photographs, or you must be under a hard limit today and can live without selectable text, re-render to a target. If the document is a contract, a form, or anything someone will need to search, quote, or read with assistive technology, do not rasterise it — split it or send a link instead. And if you are unsure, run lossless first: it takes a second and it can never leave you worse off.</p>
+
+    <div class="tool-cta">
+      <div>
+        <strong>Try both and compare</strong>
+        <p>Each tool reports the before-and-after size, so you can see which technique your file responds to.</p>
+      </div>
+      <a class="go" href="../compress-pdf.html">Open the compressor →</a>
+    </div>
+
+  <div class="byline">
+    <span class="av">LP</span>
+    <p><strong>The Local PDF team</strong><br>
+    We build and maintain the browser-based tools on this site. Everything we publish is written from the same place the tools come from: working with real documents, on real deadlines, on ordinary hardware. Corrections and questions are welcome at <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>.</p>
+  </div>
+  </article>
+  <section class="related">
+    <h2>Related guides</h2>
+    <div class="cards">
+      <a class="cardlink" href="../guides/reduce-pdf-size-for-email.html"><span class="eyebrow">Guide</span><h3>Getting under an email limit</h3><p>What to try, in which order, and when to stop compressing.</p><span class="more">Read →</span></a>
+      <a class="cardlink" href="../guides/scanned-pdf-file-size.html"><span class="eyebrow">Guide</span><h3>Why scanned PDFs are enormous</h3><p>DPI, colour depth, and the settings that create the problem.</p><span class="more">Read →</span></a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="../index.html">Merge files into one PDF</a>
+        <a href="../compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="../shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="../guides/index.html">All guides</a>
+        <a href="../guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="../guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="../guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="../about.html">About &amp; contact</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

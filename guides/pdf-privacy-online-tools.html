@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Happens to a PDF You Upload to an Online Converter | The Local PDF</title>
+  <meta name="description" content="Retention policies versus technical guarantees, the documents where it genuinely matters, and a ten-second test for whether a tool really runs locally.">
+  <link rel="canonical" href="https://thelocalpdf.com/guides/pdf-privacy-online-tools.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="What Happens to a PDF You Upload to an Online Converter | The Local PDF">
+  <meta property="og:description" content="Retention policies versus technical guarantees, the documents where it genuinely matters, and a ten-second test for whether a tool really runs locally.">
+  <meta property="og:url" content="https://thelocalpdf.com/guides/pdf-privacy-online-tools.html">
+  <meta name="twitter:card" content="summary">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
+          crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "Article",
+      "headline": "What Happens to a PDF You Upload to an Online Converter",
+      "description": "Retention policies versus technical guarantees, the documents where it genuinely matters, and a ten-second test for whether a tool really runs locally.",
+      "url": "https://thelocalpdf.com/guides/pdf-privacy-online-tools.html",
+      "datePublished": "2026-07-19",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "wordCount": 838,
+      "author": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://thelocalpdf.com/guides/pdf-privacy-online-tools.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://thelocalpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://thelocalpdf.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF privacy",
+          "item": "https://thelocalpdf.com/guides/pdf-privacy-online-tools.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="../index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      The Local PDF
+    </a>
+    <div class="mainnav">
+      <a href="../index.html">Tools</a>
+      <a href="../guides/index.html" class="on">Guides</a>
+      <a href="../about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
+    </div>
+  </nav>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="../guides/index.html">Guides</a><span class="sep">/</span><span aria-current="page">PDF privacy</span></nav>
+  <article class="post prose">
+    <header>
+      <h1>What Happens to a PDF You Upload to an Online Converter</h1>
+      <p class="standfirst">&ldquo;Deleted after one hour&rdquo; describes a policy, not a mechanism. Here is how to tell the difference.</p>
+      <div class="post-meta"><span class="tag">Privacy</span><span>Updated 2 August 2026</span><span>6 min read</span></div>
+    </header>
+
+    <div class="keybox">
+      <h2>In short</h2>
+      <ul>
+        <li>Most online PDF tools process your file on their servers, not in your browser.</li>
+        <li>"Deleted after one hour" describes a policy, not a technical guarantee.</li>
+        <li>You can test whether a tool is genuinely local in about ten seconds.</li>
+      </ul>
+    </div>
+
+    <p>The question is not whether these services are run by bad actors — the large ones are legitimate businesses with real security teams. The question is whether handing them a copy of a specific document is a decision you would make deliberately, if anyone had asked you.</p>
+
+    <h2>What "online PDF tool" usually means</h2>
+    <p>In the common design, your file is uploaded to a server, placed in a processing queue, converted by software running there, and offered back as a download link. Between those steps the document exists as a file on someone else's disk, and typically also in temporary storage, in a CDN cache, and in operational backups.</p>
+    <p>Providers describe this honestly enough in their privacy policies — files removed after an hour, or a day, or on demand. Those statements are commitments rather than mechanisms. They depend on the retention job running correctly, on backups being purged on schedule, on sub-processors honouring the same terms, and on the company not being acquired or breached in the meantime. None of that is paranoid; it is just the ordinary set of things that can go wrong with data you no longer control.</p>
+
+    <h2>Documents where this actually matters</h2>
+    <p>Nobody needs to agonise over a restaurant menu. The calculation changes for:</p>
+    <ul>
+      <li><strong>Identity documents.</strong> Passports, ID cards, and driving licences are the raw material of account takeover and loan fraud.</li>
+      <li><strong>Financial records.</strong> Payslips and bank statements contain account numbers, salary, employer, and address in one convenient package.</li>
+      <li><strong>Health information.</strong> Under the GDPR this is special-category data with a higher bar for lawful processing. Uploading a relative's test results is a decision made on their behalf.</li>
+      <li><strong>Work product.</strong> Client contracts, unpublished figures, and internal reports are often covered by confidentiality obligations you personally agreed to. A great many corporate policies prohibit exactly this, and most people who break them have simply never read them.</li>
+      <li><strong>Legal paperwork.</strong> Court filings, custody documents, and immigration files can be sensitive in ways that outlive their usefulness.</li>
+    </ul>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>The ten-second test</h2>
+    <p>You do not have to take anyone's word for it, including ours.</p>
+    <ol class="steps">
+      <li>
+        <h3>Load the page</h3>
+        <p>Open the tool normally and let it finish loading, including any libraries it fetches.</p>
+      </li>
+      <li>
+        <h3>Disconnect from the internet</h3>
+        <p>Turn off Wi-Fi, or use your browser's developer tools to switch the network to offline mode.</p>
+      </li>
+      <li>
+        <h3>Use the tool</h3>
+        <p>Add a file and run it. If it completes and gives you a download, the processing happened on your machine — there was no network available to send anything over. If it hangs or errors, the file was going somewhere.</p>
+      </li>
+    </ol>
+    <p>A second check for the curious: open the Network tab in developer tools before running the tool. A local tool shows no request carrying your file. An uploading tool shows a large POST at the moment you press the button.</p>
+
+    <h2>Why local processing is possible now</h2>
+    <p>This is not a moral achievement, it is a technical shift. Modern browsers can read files from disk into memory, decode and re-encode images through the canvas API, run PDF parsers compiled to WebAssembly, and hand a generated file back as a download. Mature open-source libraries — <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> for constructing and rewriting documents, Mozilla's <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a> for rendering them — do the heavy lifting. Ten years ago the server was necessary. For merging, compressing, and re-rendering, it no longer is.</p>
+    <p>The honest limits are worth stating too. Browsers cannot faithfully convert Word, Excel, or PowerPoint files, because that requires a full office rendering engine; any site offering it is doing the work remotely. Very large documents are constrained by your device's memory. And OCR, while possible in a browser, is slow enough that most sites do it server-side.</p>
+
+    <h2>A short checklist before you upload anything</h2>
+    <ul>
+      <li>Would you email this document to a stranger at that company? If not, uploading it is the same act with extra steps.</li>
+      <li>Does it contain someone else's personal data? Then the choice is not only yours to make.</li>
+      <li>Does your employer's policy cover it? Most do, somewhere.</li>
+      <li>Is there a local tool that does the job? For merging and compressing, there is — including <a href="../index.html">this one</a>.</li>
+      <li>If you must upload, delete the result from the service afterwards and prefer providers with a clear retention statement.</li>
+    </ul>
+
+    <div class="tool-cta">
+      <div>
+        <strong>Test us with the same method</strong>
+        <p>Load any tool on this site, go offline, and keep working. Nothing here needs a connection once the page has loaded.</p>
+      </div>
+      <a class="go" href="../index.html">Open the tools →</a>
+    </div>
+
+  <div class="byline">
+    <span class="av">LP</span>
+    <p><strong>The Local PDF team</strong><br>
+    We build and maintain the browser-based tools on this site. Everything we publish is written from the same place the tools come from: working with real documents, on real deadlines, on ordinary hardware. Corrections and questions are welcome at <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>.</p>
+  </div>
+  </article>
+  <section class="related">
+    <h2>Related guides</h2>
+    <div class="cards">
+      <a class="cardlink" href="../guides/lossless-vs-lossy-pdf-compression.html"><span class="eyebrow">Guide</span><h3>Lossless vs lossy compression</h3><p>What each technique can and cannot reach inside a PDF.</p><span class="more">Read →</span></a>
+      <a class="cardlink" href="../guides/reduce-pdf-size-for-email.html"><span class="eyebrow">Guide</span><h3>Getting under an email limit</h3><p>The order to try things in, without uploading anything.</p><span class="more">Read →</span></a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="../index.html">Merge files into one PDF</a>
+        <a href="../compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="../shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="../guides/index.html">All guides</a>
+        <a href="../guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="../guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="../guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="../about.html">About &amp; contact</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
