@@ -1,141 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrink PDF to Target Size (e.g., 10MB) | The Local PDF</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
-            crossorigin="anonymous"></script>
-    <meta name="description" content="Shrink a PDF to fit email and upload limits. Re-render pages locally to hit your exact target size without uploading to external servers.">
-    <link rel="canonical" href="https://thelocalpdf.com/shrink-pdf.html">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrink PDF to a Target Size (5, 10 or 25 MB) | The Local PDF</title>
+  <meta name="description" content="Shrink a PDF to fit email and upload limits. Pages are re-rendered locally to hit your exact target size — nothing is uploaded to a server.">
+  <link rel="canonical" href="https://thelocalpdf.com/shrink-pdf.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="Shrink PDF to a Target Size (5, 10 or 25 MB) | The Local PDF">
+  <meta property="og:description" content="Shrink a PDF to fit email and upload limits. Pages are re-rendered locally to hit your exact target size — nothing is uploaded to a server.">
+  <meta property="og:url" content="https://thelocalpdf.com/shrink-pdf.html">
+  <meta name="twitter:card" content="summary">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
+          crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "WebApplication",
+      "name": "The Local PDF — Shrink PDF to size",
+      "url": "https://thelocalpdf.com/shrink-pdf.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any modern web browser",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Reduce a PDF to a target file size in the browser by re-rendering its pages.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are my files really private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pages are rendered and re-encoded inside your browser tab using your device's own graphics pipeline. Nothing is uploaded, stored, or transmitted, and the data is discarded when you close the tab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can't I select the text any more?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because each page has been replaced by an image of itself. That is how the large savings are achieved. If you need selectable text, use the lossless compressor instead, or keep the original alongside the shrunken copy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The result is still above my target. What now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool reached the smallest preset it has and reports that clearly. Options: split the document into two files, remove pages you do not need, or crop large blank margins before shrinking. For scans, converting to greyscale in your scanner software before re-scanning also helps a great deal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Roughly a second per page per pass on a modern laptop, and target mode makes three or four passes. A 40-page document is usually done in well under a minute; a 300-page one is worth starting and leaving alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on scanned documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — that is where it performs best. Scans are already images, so re-rendering them at a sensible resolution often cuts 80–95% of the file size with little visible difference on screen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the page count or page size change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every page keeps its position and dimensions. Only the content of each page is replaced with a rendered image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I undo it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not from the shrunken file — the discarded detail is gone. Always keep the original until you have checked the output, and download the result under a new name (the tool adds a suffix for exactly this reason)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true"></div>
-
 <div class="wrap">
-    <nav class="nav">
-        <div class="brand">
-            <div class="mark">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-            </div>
-            The Local PDF
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      The Local PDF
+    </a>
+    <div class="mainnav">
+      <a href="index.html" class="on">Tools</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>PDF tools that <em>never see</em> your files</h1>
+    <p>Merge, compress, and shrink PDFs right here in your browser. Free, instant, and completely private — nothing is ever uploaded.</p>
+    <div class="trust">
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>100% on-device</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>No sign-up</span>
+      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Free forever</span>
+    </div>
+  </header>
+  <nav class="seg" aria-label="Tools">
+    <a href="index.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg><span>Merge to PDF</span></a>
+    <a href="compress-pdf.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg><span>Compress</span></a>
+    <a href="shrink-pdf.html" class="seg-link" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg><span>Shrink to size</span></a>
+  </nav>
+  <section class="tool" id="tool-shrink">
+    <div class="card">
+      <h2>Shrink a PDF to a target size</h2>
+      <p class="sub">Perfect for email and upload limits. Pages are re-rendered as compressed images: layout and page count stay identical, but text is no longer selectable and fine detail is reduced.</p>
+
+      <label class="drop" id="drop-shrink" tabindex="0">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg></div>
+        <div class="t1">Drop a PDF here or <b>browse</b></div>
+        <div class="t2">one .pdf file</div>
+        <input type="file" id="input-shrink" accept="application/pdf,.pdf">
+      </label>
+
+      <ul class="files" id="list-shrink"></ul>
+
+      <div class="options" id="shrink-target-opts">
+        <div class="chips" role="group" aria-label="Target size">
+          <span class="lbl">Target size:</span>
+          <button class="chip" data-mb="5">5 MB</button>
+          <button class="chip" data-mb="10" aria-pressed="true">10 MB</button>
+          <button class="chip" data-mb="25">25 MB</button>
+          <input type="number" id="opt-target" value="10" min="0.1" step="0.5" aria-label="Custom target in MB"> MB
         </div>
-        <div class="badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Files never leave your device</span>
+      </div>
+      <div class="options" style="margin-top:10px">
+        <label class="switch">
+          <input type="checkbox" id="opt-manual">
+          <span class="track"></span>
+          Manual quality instead
+        </label>
+        <div class="slider-field" id="f-quality" style="display:none">
+          <div class="row"><span>JPEG quality</span><span class="val" id="q-val">75</span></div>
+          <input type="range" id="opt-quality" min="20" max="95" value="75">
         </div>
-    </nav>
-
-    <header class="hero">
-        <h1>PDF tools that <em>never see</em> your files</h1>
-        <p>Merge, compress, and shrink PDFs right here in your browser. Free, instant, and completely private — nothing is ever uploaded.</p>
-        <div class="trust">
-            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>100% on-device</span>
-            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>No sign-up</span>
-            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Free forever</span>
+        <div class="slider-field" id="f-maxdim" style="display:none">
+          <div class="row"><span>Max page resolution</span><span class="val" id="d-val">1600 px</span></div>
+          <input type="range" id="opt-maxdim" min="600" max="2400" step="100" value="1600">
         </div>
-    </header>
+        <button class="run" id="run-shrink" disabled>
+          Shrink PDF
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
 
-    <nav class="seg" aria-label="Tools">
-        <a href="index.html" class="seg-link">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg>
-            <span>Merge to PDF</span>
-        </a>
-        <a href="compress-pdf.html" class="seg-link">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
-            <span>Compress</span>
-        </a>
-        <a href="shrink-pdf.html" class="seg-link" aria-current="page">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg>
-            <span>Shrink to size</span>
-        </a>
-    </nav>
+      <div class="progress" id="prog-shrink"><div class="bar"><div></div></div><div class="msg"></div></div>
+      <div class="result" id="out-shrink"></div>
 
-    <section class="tool" id="tool-shrink">
-        <div class="card">
-            <h2>Shrink a PDF to a target size</h2>
-            <p class="sub">Perfect for email and upload limits. Pages are re-rendered as compressed images: layout and page count stay identical, but text is no longer selectable and fine detail is reduced.</p>
+      <div class="hintline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        Target mode automatically finds the best quality that fits under your limit — it tries high quality first and only steps down as far as needed.
+      </div>
+    </div>
+  </section>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+  <section class="content-section prose">
+    <h2>How to shrink a PDF to an exact size</h2>
+    <ol class="steps">
+      <li>
+        <h3>Drop in the PDF</h3>
+        <p>One file at a time. The page count and original size appear immediately so you know what you are working with.</p>
+      </li>
+      <li>
+        <h3>Pick the ceiling you have to fit under</h3>
+        <p>Use a preset — 5, 10, or 25 MB — or type any number, including decimals such as <code>4.5</code>. Aim slightly below the real limit: mail servers measure the whole encoded message, not just your attachment.</p>
+      </li>
+      <li>
+        <h3>Let it search, or take the controls</h3>
+        <p>Target mode tries a high-quality setting first and steps down only as far as it must. If you would rather decide yourself, switch on <strong>Manual quality instead</strong> and set JPEG quality and maximum page resolution directly.</p>
+      </li>
+      <li>
+        <h3>Open the result before you delete the original</h3>
+        <p>Check the pages that matter — small print, stamps, signatures, fine tables. If anything is too soft, raise the target by a megabyte or two and run it again.</p>
+      </li>
+    </ol>
 
-            <label class="drop" id="drop-shrink" tabindex="0">
-                <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg></div>
-                <div class="t1">Drop a PDF here or <b>browse</b></div>
-                <div class="t2">one .pdf file</div>
-                <input type="file" id="input-shrink" accept="application/pdf,.pdf">
-            </label>
+    <h2>What the tool actually does to your pages</h2>
+    <p>Each page is rendered exactly as a PDF reader would display it, then that rendering is saved as a JPEG image and placed on a page of the original dimensions. The document keeps its page count, page sizes, and visual layout. What it loses is everything that was structured data rather than appearance:</p>
+    <ul>
+      <li><strong>Text becomes pixels.</strong> You cannot select, copy, or search it, and screen readers can no longer read it aloud.</li>
+      <li><strong>Links, bookmarks, and form fields disappear</strong>, because they are annotations attached to text, not part of the visible page.</li>
+      <li><strong>Fine detail softens.</strong> Hairlines, small serif type, and subtle gradients suffer first; photographs cope well.</li>
+      <li><strong>File size becomes predictable</strong>, which is the entire point — it is now governed by resolution and JPEG quality rather than by the document's contents.</li>
+    </ul>
+    <p>That trade is right for a scanned lease you need to email today, and wrong for a contract someone will search through next year. When accessibility or searchability matters, <a href="compress-pdf.html">lossless compression</a> or splitting the document is the better answer.</p>
 
-            <ul class="files" id="list-shrink"></ul>
+    <h2>How target mode chooses its settings</h2>
+    <p>There is no formula that turns "10 MB" into a quality number, because it depends on what is on the pages. Instead, the tool works through a ladder of presets ordered from best to smallest — each one a pairing of maximum page resolution and JPEG quality — and performs a binary search over it, re-rendering the document at each step it tests.</p>
+    <p>The result is the highest-quality preset on the ladder that still lands under your target, usually found in three or four passes rather than by testing every rung. If even the smallest preset overshoots, you get that smallest version anyway, clearly labelled, so you can decide whether to split the document instead.</p>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>Common limits worth targeting</h2>
+    <p>Attachment limits are quoted for the encoded message, and email encoding inflates a binary file by roughly a third. A "25 MB limit" therefore accepts an attachment of around 18 MB in practice. The right-hand column is the target to set here.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Where you are sending it</th><th>Stated limit</th><th>Safe target</th></tr></thead>
+        <tbody>
+          <tr><td>Gmail</td><td class="num">25 MB</td><td class="num">18 MB</td></tr>
+          <tr><td>Outlook.com</td><td class="num">20 MB</td><td class="num">14 MB</td></tr>
+          <tr><td>Microsoft 365 / Exchange (default)</td><td class="num">25–35 MB</td><td class="num">18 MB</td></tr>
+          <tr><td>iCloud Mail</td><td class="num">20 MB</td><td class="num">14 MB</td></tr>
+          <tr><td>Corporate mail servers (typical)</td><td class="num">10 MB</td><td class="num">7 MB</td></tr>
+          <tr><td>Job application portals</td><td class="num">2–5 MB</td><td class="num">2 MB</td></tr>
+          <tr><td>Government and tender portals</td><td class="num">5–10 MB</td><td class="num">4 MB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Limits change and administrators override defaults, so treat these as starting points rather than guarantees. When a portal states a limit, target roughly 20% below it.</p>
 
-            <div class="options" id="shrink-target-opts">
-                <div class="chips" role="group" aria-label="Target size">
-                    <span class="lbl">Target size:</span>
-                    <button class="chip" data-mb="5">5 MB</button>
-                    <button class="chip" data-mb="10" aria-pressed="true">10 MB</button>
-                    <button class="chip" data-mb="25">25 MB</button>
-                    <input type="number" id="opt-target" value="10" min="0.1" step="0.5" aria-label="Custom target in MB"> MB
-                </div>
-            </div>
-            <div class="options" style="margin-top:10px">
-                <label class="switch">
-                    <input type="checkbox" id="opt-manual">
-                    <span class="track"></span>
-                    Manual quality instead
-                </label>
-                <div class="slider-field" id="f-quality" style="display:none">
-                    <div class="row"><span>JPEG quality</span><span class="val" id="q-val">75</span></div>
-                    <input type="range" id="opt-quality" min="20" max="95" value="75">
-                </div>
-                <div class="slider-field" id="f-maxdim" style="display:none">
-                    <div class="row"><span>Max page resolution</span><span class="val" id="d-val">1600 px</span></div>
-                    <input type="range" id="opt-maxdim" min="600" max="2400" step="100" value="1600">
-                </div>
-                <button class="run" id="run-shrink" disabled>
-                    Shrink PDF
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </button>
-            </div>
+    <h2>Setting quality by hand</h2>
+    <p>Manual mode exposes the two levers that matter. Resolution is the stronger of the two: halving it removes about three quarters of the pixels, while dropping JPEG quality from 80 to 60 typically saves a third.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Setting</th><th>Best for</th><th>What suffers</th></tr></thead>
+        <tbody>
+          <tr><td>2000–2400 px · quality 85</td><td>Archival scans, anything to be reprinted</td><td>Very little; savings are modest</td></tr>
+          <tr><td>1600 px · quality 75</td><td>The everyday default — email and portals</td><td>Slight softening of very small type</td></tr>
+          <tr><td>1200 px · quality 65</td><td>Screen reading and quick review</td><td>Footnotes and 6pt text get fuzzy</td></tr>
+          <tr><td>800–1000 px · quality 45</td><td>Hard limits you cannot negotiate</td><td>Visible artefacts; body text still legible</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-            <div class="progress" id="prog-shrink"><div class="bar"><div></div></div><div class="msg"></div></div>
-            <div class="result" id="out-shrink"></div>
+    <h3>A note on printing</h3>
+    <p>A page rendered at 1600 px across A4 works out to roughly 195 DPI — fine on screen, acceptable on an office printer, short of the 300 DPI that commercial printing expects. If the document will be printed professionally, keep the original and send it as a link.</p>
 
-            <div class="hintline">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-                Target mode automatically finds the best quality that fits under your limit — it tries high quality first and only steps down as far as needed.
-            </div>
-        </div>
-    </section>
+    <div class="tool-cta">
+      <div>
+        <strong>Quality matters more than size?</strong>
+        <p>Try lossless compression first. It reclaims structural waste without touching a single pixel.</p>
+      </div>
+      <a class="go" href="compress-pdf.html">Compress losslessly →</a>
+    </div>
+  </section>
 
-    <section class="faq">
-        <h2>Frequently asked questions</h2>
-        <details>
-            <summary>Are my files really private?</summary>
-            <p>Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they're gone. You can even load this page, disconnect from the internet, and it still works.</p>
-        </details>
-        <details>
-            <summary>What's the difference between Compress and Shrink?</summary>
-            <p><strong>Compress</strong> is lossless: it repacks the PDF's internal structure so nothing about the content changes — same text, same image quality. Savings are modest but free. <strong>Shrink</strong> is lossy: it re-renders pages as compressed images to hit a target file size. It saves far more space, but text stops being selectable and fine detail is reduced.</p>
-        </details>
-    </section>
+  <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details>
+      <summary>Are my files really private?</summary>
+      <p>Yes. Pages are rendered and re-encoded inside your browser tab using your device's own graphics pipeline. Nothing is uploaded, stored, or transmitted, and the data is discarded when you close the tab.</p>
+    </details>
+    <details>
+      <summary>Why can't I select the text any more?</summary>
+      <p>Because each page has been replaced by an image of itself. That is how the large savings are achieved. If you need selectable text, use the lossless compressor instead, or keep the original alongside the shrunken copy.</p>
+    </details>
+    <details>
+      <summary>The result is still above my target. What now?</summary>
+      <p>The tool reached the smallest preset it has and reports that clearly. Options: split the document into two files, remove pages you do not need, or crop large blank margins before shrinking. For scans, converting to greyscale in your scanner software before re-scanning also helps a great deal.</p>
+    </details>
+    <details>
+      <summary>How long does it take?</summary>
+      <p>Roughly a second per page per pass on a modern laptop, and target mode makes three or four passes. A 40-page document is usually done in well under a minute; a 300-page one is worth starting and leaving alone.</p>
+    </details>
+    <details>
+      <summary>Does it work on scanned documents?</summary>
+      <p>Yes — that is where it performs best. Scans are already images, so re-rendering them at a sensible resolution often cuts 80–95% of the file size with little visible difference on screen.</p>
+    </details>
+    <details>
+      <summary>Will the page count or page size change?</summary>
+      <p>No. Every page keeps its position and dimensions. Only the content of each page is replaced with a rendered image.</p>
+    </details>
+    <details>
+      <summary>Can I undo it?</summary>
+      <p>Not from the shrunken file — the discarded detail is gone. Always keep the original until you have checked the output, and download the result under a new name (the tool adds a suffix for exactly this reason).</p>
+    </details>
+  </section>
+  <section class="related">
+    <h2>Keep reading</h2>
+    <div class="cards">
+      <a class="cardlink" href="guides/reduce-pdf-size-for-email.html">
+        <span class="eyebrow">Guide</span>
+        <h3>Getting a PDF under an email attachment limit</h3>
+        <p>Why 25 MB is not really 25 MB, and the order to try things in.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="cardlink" href="guides/scanned-pdf-file-size.html">
+        <span class="eyebrow">Guide</span>
+        <h3>Why scanned PDFs are enormous</h3>
+        <p>Fix it at the scanner and you will rarely need to shrink anything again.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+    </div>
+  </section>
+
 </div>
 
-<footer>
-    <div class="wrap foot">
-        <div>
-            <strong>The Local PDF</strong> · free PDF utilities, entirely in your browser<br>
-            <span style="font-size:12.5px">
-        <a href="privacy.html" style="color:inherit">Privacy Policy</a> ·
-        <a href="terms.html" style="color:inherit">Terms of Use</a> ·
-        <a href="mailto:hello@thelocalpdf.com" style="color:inherit">Contact</a>
-      </span>
-        </div>
-        <div class="lock">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            No uploads · no tracking of your files
-        </div>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="index.html">Merge files into one PDF</a>
+        <a href="compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="guides/index.html">All guides</a>
+        <a href="guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="about.html">About &amp; contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
     </div>
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
+    </div>
+  </div>
 </footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="assets/js/app.js"></script>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About The Local PDF — How Browser-Based PDF Tools Work</title>
+  <meta name="description" content="Who builds The Local PDF, how the tools process files entirely on your device, which open-source libraries they use, and how the site is funded.">
+  <link rel="canonical" href="https://thelocalpdf.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="About The Local PDF — How Browser-Based PDF Tools Work">
+  <meta property="og:description" content="Who builds The Local PDF, how the tools process files entirely on your device, which open-source libraries they use, and how the site is funded.">
+  <meta property="og:url" content="https://thelocalpdf.com/about.html">
+  <meta name="twitter:card" content="summary">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
+          crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "AboutPage",
+      "url": "https://thelocalpdf.com/about.html",
+      "name": "About The Local PDF"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://thelocalpdf.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://thelocalpdf.com/about.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+      The Local PDF
+    </a>
+    <div class="mainnav">
+      <a href="index.html">Tools</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html" class="on">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
+    </div>
+  </nav>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">About</span></nav>
+  <article class="post prose">
+    <header>
+      <h1>About The Local PDF</h1>
+      <p class="standfirst">Three PDF utilities that run inside your browser, built because the alternative was uploading payslips to a website nobody had heard of.</p>
+      <div class="post-meta"><span class="tag">About</span><span>Updated 2 August 2026</span></div>
+    </header>
+
+    <h2>Why this site exists</h2>
+    <p>Merging a few documents is a two-minute job that the web has made oddly complicated. Search for a PDF tool and you find services that ask you to create an account, wait in a queue, accept a watermark, or — most commonly — upload the document to a server so it can be processed somewhere else and downloaded back.</p>
+    <p>For a great many documents that last step is the problem. Payslips, ID scans, medical letters, and client contracts are exactly the files people need to merge and compress, and exactly the files that should not be handed to an unfamiliar processor because a browser tab asked nicely.</p>
+    <p>Modern browsers can do this work themselves. The Local PDF is what that looks like: three tools, no account, no upload, no queue, no watermark, and no file ever leaving the machine it started on.</p>
+
+    <h2>How it works</h2>
+    <p>Everything happens in JavaScript in your tab. When you add a file, the browser reads it into memory on your device. Processing runs there, the result is assembled in memory, and your browser hands it to you as a download. There is no server component — this site is static files and nothing else.</p>
+    <p>Two open-source libraries do the heavy lifting:</p>
+    <ul>
+      <li><a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> parses, rebuilds, and writes PDF documents. It handles merging and the lossless compression pass.</li>
+      <li>Mozilla's <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a> renders pages to a canvas — the same engine Firefox uses to display PDFs. It powers the shrink tool's page re-rendering.</li>
+    </ul>
+    <p>You can verify all of this without trusting us. Load any tool page, disconnect from the internet, and keep working. A tool that uploads your file cannot function offline.</p>
+
+    <h2>What the tools do</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Tool</th><th>What it does</th><th>Quality</th></tr></thead>
+        <tbody>
+          <tr><td><a href="index.html">Merge to PDF</a></td><td>Combines PDFs, images, and text files into one document in a chosen order</td><td>Unchanged</td></tr>
+          <tr><td><a href="compress-pdf.html">Compress</a></td><td>Rewrites the PDF's internal structure to remove waste</td><td>Unchanged</td></tr>
+          <tr><td><a href="shrink-pdf.html">Shrink to size</a></td><td>Re-renders pages as compressed images to hit a target file size</td><td>Reduced, deliberately</td></tr>
+        </tbody>
+      </table>
+    </div>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>What we deliberately do not do</h2>
+    <ul>
+      <li><strong>No accounts.</strong> There is nothing to sign up for and no user data to lose.</li>
+      <li><strong>No file storage.</strong> Not briefly, not encrypted, not at all — there is no server to store anything on.</li>
+      <li><strong>No Office conversion.</strong> Rendering Word or Excel faithfully needs an engine browsers do not have. Any site offering it is processing your file remotely, and we would rather tell you to export to PDF yourself.</li>
+      <li><strong>No watermarks, page caps, or paid tier.</strong> The site is funded by advertising, which is why you see ads on these pages.</li>
+    </ul>
+
+    <h2>How the site is funded</h2>
+    <p>The tools are free and there is no premium version. Running costs are covered by advertising served through Google AdSense. Ads are placed around the written content and between sections — never over the tools themselves, and never in a way that interferes with using them.</p>
+    <p>Advertising is served by a third party, and unlike the tools it does involve cookies and, in some regions, a consent choice. That is described in full in our <a href="privacy.html">privacy policy</a>. What advertising never involves is your documents: they are not transmitted anywhere, so no advertiser, analytics provider, or anyone else can see them.</p>
+
+    <h2>Editorial approach</h2>
+    <p>The <a href="guides/index.html">guides</a> are written by the same people who build the tools, from problems we actually hit: a scan that would not fit under a portal limit, a merged file that came out upside down, a compression pass that saved nothing. Where we give numbers — file sizes, resolutions, attachment limits — they come from testing or from providers' own documentation, and we say when a figure is a rough range rather than a rule. We do not run affiliate links or sponsored posts, and when a tool on this site is the wrong answer to a problem, the guides say so.</p>
+    <p>If something here is wrong or out of date, tell us and we will fix it.</p>
+
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a> for bug reports, corrections, feature requests, advertising questions, or anything to do with these terms. Bug reports are most useful with your browser and operating system, and a description of the file that failed — please do not attach the file itself.</p>
+    <p>The Local PDF is an independent project based in Portugal, operating since 2025 and not affiliated with Adobe or any other PDF vendor.</p>
+  </article>
+
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="index.html">Merge files into one PDF</a>
+        <a href="compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="guides/index.html">All guides</a>
+        <a href="guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="about.html">About &amp; contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

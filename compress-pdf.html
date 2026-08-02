@@ -4,27 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compress PDF Files Losslessly — Free Local Tool | The Local PDF</title>
+  <meta name="description" content="Reduce PDF file size without losing any quality. Repack your PDF's internal structure locally in your browser — files never leave your device.">
+  <link rel="canonical" href="https://thelocalpdf.com/compress-pdf.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="Compress PDF Files Losslessly — Free Local Tool | The Local PDF">
+  <meta property="og:description" content="Reduce PDF file size without losing any quality. Repack your PDF's internal structure locally in your browser — files never leave your device.">
+  <meta property="og:url" content="https://thelocalpdf.com/compress-pdf.html">
+  <meta name="twitter:card" content="summary">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
           crossorigin="anonymous"></script>
-  <meta name="description" content="Reduce your PDF file size without losing quality. Repack your PDF structure locally in your browser. Files never leave your device.">
-  <link rel="canonical" href="https://thelocalpdf.com/compress-pdf.html">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "WebApplication",
+      "name": "The Local PDF — Compress PDF",
+      "url": "https://thelocalpdf.com/compress-pdf.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any modern web browser",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Lossless PDF compression that runs entirely in the browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are my files really private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Compression runs in JavaScript inside your browser tab. The PDF is read into memory on your device, rebuilt there, and never uploaded, stored, or transmitted. Close the tab and it is gone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the text still be selectable and searchable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Lossless compression never rasterises anything. Text, fonts, links, and bookmarks come through untouched, which is exactly what separates it from the shrink tool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did my file barely get smaller — or get slightly bigger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because it was already efficiently packed, or because almost all of its bytes are image data that is already compressed. A file can occasionally grow by a fraction of a percent when the rebuilt structure adds a little overhead to an already-optimal layout. Keep the original in that case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it remove metadata such as the author name?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Document metadata is preserved. If you need to strip author names, timestamps, or producer strings, do that in a PDF editor before or after compressing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress a password-protected PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. Encrypted documents cannot be parsed without the password and will fail with an error. Open the file in a reader, remove the protection, save a copy, and compress that."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a page or size limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No fixed limit — it depends on your device's available memory. Very large files may take a few seconds and briefly use a lot of RAM, since the whole document is held in memory while it is rebuilt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between this and the shrink tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compress is lossless: it repacks the file's internal structure and changes nothing you can see. Shrink is lossy: it re-renders pages as compressed images to reach a target size, saving far more space at the cost of selectable text and fine detail."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true"></div>
-
 <div class="wrap">
   <nav class="nav">
-    <div class="brand">
-      <div class="mark">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-      </div>
+    <a class="brand" href="index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
       The Local PDF
-    </div>
-    <div class="badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span>Files never leave your device</span>
+    </a>
+    <div class="mainnav">
+      <a href="index.html" class="on">Tools</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
     </div>
   </nav>
 
@@ -37,22 +138,11 @@
       <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Free forever</span>
     </div>
   </header>
-
   <nav class="seg" aria-label="Tools">
-    <a href="index.html" class="seg-link">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg>
-      <span>Merge to PDF</span>
-    </a>
-    <a href="compress-pdf.html" class="seg-link" aria-current="page">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
-      <span>Compress</span>
-    </a>
-    <a href="shrink-pdf.html" class="seg-link">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg>
-      <span>Shrink to size</span>
-    </a>
+    <a href="index.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg><span>Merge to PDF</span></a>
+    <a href="compress-pdf.html" class="seg-link" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg><span>Compress</span></a>
+    <a href="shrink-pdf.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg><span>Shrink to size</span></a>
   </nav>
-
   <section class="tool" id="tool-compress">
     <div class="card">
       <h2>Compress a PDF — lossless</h2>
@@ -76,6 +166,113 @@
 
       <div class="progress" id="prog-compress"><div class="bar"><div></div></div><div class="msg"></div></div>
       <div class="result" id="out-compress"></div>
+
+      <div class="hintline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        Lossless means the visible document is untouched. If the savings are small, your PDF is already efficiently packed — that is a good sign, not a failure.
+      </div>
+    </div>
+  </section>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+  <section class="content-section prose">
+    <h2>How to compress a PDF without losing quality</h2>
+    <ol class="steps">
+      <li>
+        <h3>Drop in one PDF</h3>
+        <p>Only one file at a time, because the tool reports a precise before-and-after comparison for it. Merge first if you have several.</p>
+      </li>
+      <li>
+        <h3>Press Compress PDF</h3>
+        <p>The document is parsed, rebuilt, and written back out. On a typical report this takes well under a second; a 500-page manual takes a few.</p>
+      </li>
+      <li>
+        <h3>Check the numbers before you download</h3>
+        <p>You get the original size, the new size, and the percentage saved. If the saving is negligible, keep your original — nothing is lost either way.</p>
+      </li>
+    </ol>
+
+    <h2>What "lossless" actually means here</h2>
+    <p>A PDF is not one continuous stream of data. It is a container holding thousands of numbered objects — fonts, images, page descriptions, metadata — plus a cross-reference table that says where each object lives. Producers such as scanners, Word, and export plugins are often careless with that container. Lossless compression cleans it up:</p>
+    <ul>
+      <li><strong>Object streams.</strong> Hundreds of small objects are packed into compressed groups instead of sitting individually in the file, which removes a great deal of structural overhead.</li>
+      <li><strong>A rebuilt cross-reference table.</strong> Files edited many times accumulate incremental update sections, each appending a new table while the old ones linger. Rewriting produces a single, current table.</li>
+      <li><strong>Orphaned objects are dropped.</strong> Deleted pages, replaced images, and abandoned annotations frequently remain in the file, invisible but still occupying bytes.</li>
+      <li><strong>Consistent stream compression.</strong> Page content that was stored uncompressed is deflated.</li>
+    </ul>
+    <p>What it deliberately does <em>not</em> do: re-encode images, downsample resolution, subset or drop fonts, or rasterise anything. Every glyph, every pixel, and every vector path in the output is bit-for-bit what it was in the input. Text stays selectable, links keep working, and print output is identical.</p>
+
+    <div class="keybox">
+      <h2>The short version</h2>
+      <ul>
+        <li>Lossless compression rewrites the file's plumbing, never its content.</li>
+        <li>Savings depend entirely on how wasteful the original producer was.</li>
+        <li>Scanned or photo-heavy PDFs barely move — their bulk is image data, which lossless methods cannot touch.</li>
+      </ul>
+    </div>
+
+    <h2>How much can you expect to save?</h2>
+    <p>Anyone promising a fixed percentage is guessing. The realistic ranges below come from where the bytes are in each kind of document.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Type of PDF</th><th>Typical saving</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Word or LibreOffice export</td><td class="num">5–25%</td><td>Loose object structure and duplicated font data</td></tr>
+          <tr><td>Report edited and re-saved many times</td><td class="num">15–40%</td><td>Stale incremental updates and orphaned objects</td></tr>
+          <tr><td>Slide deck exported to PDF</td><td class="num">5–20%</td><td>Repeated template graphics on every slide</td></tr>
+          <tr><td>Scanned document</td><td class="num">0–5%</td><td>Nearly all bytes are already-compressed images</td></tr>
+          <tr><td>Photo portfolio or brochure</td><td class="num">0–3%</td><td>Same reason — JPEG data cannot be deflated further</td></tr>
+          <tr><td>PDF from a modern optimising producer</td><td class="num">0–2%</td><td>Already packed properly; nothing left to reclaim</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A result of zero is a legitimate outcome. It means the file was well built.</p>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>When lossless is not enough</h2>
+    <p>If you need a specific number — under 10 MB for a portal, under 25 MB for an email — lossless compression cannot promise it, because it has no lever to pull once the structure is clean. At that point you are choosing between three options:</p>
+    <ul>
+      <li><strong>Accept a quality trade.</strong> The <a href="shrink-pdf.html">shrink tool</a> re-renders each page as a compressed image and searches for the highest quality that still fits your target. Layout and page count survive; selectable text does not.</li>
+      <li><strong>Split the document.</strong> Two 12 MB files often solve a 25 MB limit better than one degraded 24 MB file, especially for anything that will be read carefully.</li>
+      <li><strong>Send a link instead.</strong> For genuinely large documents, a shared link avoids the quality question altogether.</li>
+    </ul>
+
+    <h2>Compress or shrink? A quick decision</h2>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Your situation</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>The file is slightly too big and quality is non-negotiable</td><td>Compress (lossless)</td></tr>
+          <tr><td>A contract, invoice, or anything that may be printed or searched</td><td>Compress (lossless)</td></tr>
+          <tr><td>You must be under an exact megabyte limit today</td><td><a href="shrink-pdf.html">Shrink to size</a></td></tr>
+          <tr><td>Scanned pages that only need to be readable on screen</td><td><a href="shrink-pdf.html">Shrink to size</a></td></tr>
+          <tr><td>You are not sure</td><td>Try compress first — it costs nothing and never degrades the file</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tool-cta">
+      <div>
+        <strong>Still over the limit?</strong>
+        <p>Set an exact target in megabytes and let the shrink tool find the best quality that fits underneath it.</p>
+      </div>
+      <a class="go" href="shrink-pdf.html">Shrink to a target size →</a>
     </div>
   </section>
 
@@ -83,32 +280,88 @@
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Are my files really private?</summary>
-      <p>Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they're gone. You can even load this page, disconnect from the internet, and it still works.</p>
+      <p>Yes. Compression runs in JavaScript inside your browser tab. The PDF is read into memory on your device, rebuilt there, and never uploaded, stored, or transmitted. Close the tab and it is gone.</p>
     </details>
     <details>
-      <summary>What's the difference between Compress and Shrink?</summary>
-      <p><strong>Compress</strong> is lossless: it repacks the PDF's internal structure so nothing about the content changes — same text, same image quality. Savings are modest but free. <strong>Shrink</strong> is lossy: it re-renders pages as compressed images to hit a target file size. It saves far more space, but text stops being selectable and fine detail is reduced.</p>
+      <summary>Will the text still be selectable and searchable?</summary>
+      <p>Yes. Lossless compression never rasterises anything. Text, fonts, links, and bookmarks come through untouched, which is exactly what separates it from the shrink tool.</p>
+    </details>
+    <details>
+      <summary>Why did my file barely get smaller — or get slightly bigger?</summary>
+      <p>Because it was already efficiently packed, or because almost all of its bytes are image data that is already compressed. A file can occasionally grow by a fraction of a percent when the rebuilt structure adds a little overhead to an already-optimal layout. Keep the original in that case.</p>
+    </details>
+    <details>
+      <summary>Does it remove metadata such as the author name?</summary>
+      <p>No. Document metadata is preserved. If you need to strip author names, timestamps, or producer strings, do that in a PDF editor before or after compressing.</p>
+    </details>
+    <details>
+      <summary>Can I compress a password-protected PDF?</summary>
+      <p>Usually not. Encrypted documents cannot be parsed without the password and will fail with an error. Open the file in a reader, remove the protection, save a copy, and compress that.</p>
+    </details>
+    <details>
+      <summary>Is there a page or size limit?</summary>
+      <p>No fixed limit — it depends on your device's available memory. Very large files may take a few seconds and briefly use a lot of RAM, since the whole document is held in memory while it is rebuilt.</p>
+    </details>
+    <details>
+      <summary>What is the difference between this and the shrink tool?</summary>
+      <p>Compress is lossless: it repacks the file's internal structure and changes nothing you can see. Shrink is lossy: it re-renders pages as compressed images to reach a target size, saving far more space at the cost of selectable text and fine detail.</p>
     </details>
   </section>
+  <section class="related">
+    <h2>Keep reading</h2>
+    <div class="cards">
+      <a class="cardlink" href="guides/lossless-vs-lossy-pdf-compression.html">
+        <span class="eyebrow">Guide</span>
+        <h3>Lossless vs lossy PDF compression, explained properly</h3>
+        <p>Where the bytes in a PDF actually live, and which technique can reach them.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="cardlink" href="guides/scanned-pdf-file-size.html">
+        <span class="eyebrow">Guide</span>
+        <h3>Why scanned PDFs are enormous</h3>
+        <p>DPI, colour mode, and the scanner settings that produce a 60 MB three-page file.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+    </div>
+  </section>
+
 </div>
 
-<footer>
-  <div class="wrap foot">
-    <div>
-      <strong>The Local PDF</strong> · free PDF utilities, entirely in your browser<br>
-      <span style="font-size:12.5px">
-        <a href="privacy.html" style="color:inherit">Privacy Policy</a> ·
-        <a href="terms.html" style="color:inherit">Terms of Use</a> ·
-        <a href="mailto:hello@thelocalpdf.com" style="color:inherit">Contact</a>
-      </span>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="index.html">Merge files into one PDF</a>
+        <a href="compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="guides/index.html">All guides</a>
+        <a href="guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="about.html">About &amp; contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
     </div>
-    <div class="lock">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      No uploads · no tracking of your files
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
     </div>
   </div>
 </footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

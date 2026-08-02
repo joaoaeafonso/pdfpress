@@ -4,27 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merge PDF Files Locally — Free & Private | The Local PDF</title>
+  <meta name="description" content="Combine multiple PDFs, images, and text files into a single document entirely in your browser. 100% private, no uploads, no sign-up, free to use.">
+  <link rel="canonical" href="https://thelocalpdf.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Local PDF">
+  <meta property="og:title" content="Merge PDF Files Locally — Free & Private | The Local PDF">
+  <meta property="og:description" content="Combine multiple PDFs, images, and text files into a single document entirely in your browser. 100% private, no uploads, no sign-up, free to use.">
+  <meta property="og:url" content="https://thelocalpdf.com/">
+  <meta name="twitter:card" content="summary">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5982377866162924"
           crossorigin="anonymous"></script>
-  <meta name="description" content="Combine multiple PDFs, images, and text files into a single document entirely in your browser. 100% private, no uploads, and free to use.">
-  <link rel="canonical" href="https://thelocalpdf.com/">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thelocalpdf.com/#org",
+      "name": "The Local PDF",
+      "url": "https://thelocalpdf.com/",
+      "email": "hello@thelocalpdf.com",
+      "description": "Free browser-based PDF utilities that process files entirely on the user's device."
+    },
+    {
+      "@type": "WebApplication",
+      "name": "The Local PDF — Merge to PDF",
+      "url": "https://thelocalpdf.com/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any modern web browser",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Combine PDFs, images and text files into one PDF entirely inside your browser.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "publisher": {
+        "@id": "https://thelocalpdf.com/#org"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are my files really private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they are gone. You can load this page, disconnect from the internet, and it still works."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a file size or page limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no hard limit, but processing uses your device's memory. A few hundred pages or a few hundred megabytes is fine on a modern laptop; a ten-year-old phone will struggle sooner. If a very large merge stalls, split it into two batches and merge the two results."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I merge Word or Excel files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not directly. Faithfully converting Office documents requires a rendering engine that browsers do not have, and every site that offers it is doing the conversion on a server. Export to PDF first (File → Save as → PDF), then drop the PDF here alongside your other files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does merging reduce the quality of my pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Pages from existing PDFs are copied as objects, not re-rendered, so text stays sharp and selectable and images keep their original encoding. JPEG and PNG files are embedded without re-compression."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I remove or reorder pages inside one of the PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not in this tool — it works at file level, not page level. Extract or delete the pages you do not want in a PDF reader first, save that as its own file, and then merge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to passwords, forms, and signatures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Password-protected files usually cannot be read at all and will fail with an error; remove the password first. Interactive form fields and digital signatures do not survive a merge, because the merged document is a new file — a signature that covered the old document would no longer be valid. Flatten forms before merging if the filled-in values matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once the page and its two libraries have loaded, yes. You can switch off your connection and keep merging. It is the simplest way to verify the privacy claim for yourself."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <div class="bg-blobs" aria-hidden="true"></div>
-
 <div class="wrap">
   <nav class="nav">
-    <div class="brand">
-      <div class="mark">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-      </div>
+    <a class="brand" href="index.html">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
       The Local PDF
-    </div>
-    <div class="badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span>Files never leave your device</span>
+    </a>
+    <div class="mainnav">
+      <a href="index.html" class="on">Tools</a>
+      <a href="guides/index.html">Guides</a>
+      <a href="about.html">About</a>
+      <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Files never leave your device</span></span>
     </div>
   </nav>
 
@@ -37,22 +138,11 @@
       <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Free forever</span>
     </div>
   </header>
-
   <nav class="seg" aria-label="Tools">
-    <a href="index.html" class="seg-link" aria-current="page">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg>
-      <span>Merge to PDF</span>
-    </a>
-    <a href="compress-pdf.html" class="seg-link">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>
-      <span>Compress</span>
-    </a>
-    <a href="shrink-pdf.html" class="seg-link">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg>
-      <span>Shrink to size</span>
-    </a>
+    <a href="index.html" class="seg-link" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><path d="M12 8v8M8 12h8"/></svg><span>Merge to PDF</span></a>
+    <a href="compress-pdf.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg><span>Compress</span></a>
+    <a href="shrink-pdf.html" class="seg-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8.5 13.5 12 17l3.5-3.5"/></svg><span>Shrink to size</span></a>
   </nav>
-
   <section class="tool" id="tool-combine">
     <div class="card">
       <h2>Merge files into one PDF</h2>
@@ -89,45 +179,179 @@
       </div>
     </div>
   </section>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+  <section class="content-section prose">
+    <h2>How to merge files into one PDF</h2>
+    <p>The whole process happens in this tab. Nothing is queued, nothing is uploaded, and there is no waiting room between you and the result.</p>
+    <ol class="steps">
+      <li>
+        <h3>Add your files</h3>
+        <p>Drag them onto the drop area above or click <strong>browse</strong> to pick them from your device. You can add PDFs, photos, and plain-text files in the same batch, and you can keep adding more after the first drop.</p>
+      </li>
+      <li>
+        <h3>Put them in the right order</h3>
+        <p>Every file appears as a row. Drag a row up or down, or use the arrow buttons, until the list reads top-to-bottom in the order you want the finished document to read. Files are sorted naturally on arrival, so <code>scan-2.jpg</code> lands before <code>scan-10.jpg</code> instead of after it.</p>
+      </li>
+      <li>
+        <h3>Decide how photos should sit on the page</h3>
+        <p>Turn on <strong>Rotate landscape photos to portrait</strong> if you photographed documents sideways and want every page upright. Leave it off when you are combining genuine landscape images such as screenshots or diagrams.</p>
+      </li>
+      <li>
+        <h3>Merge and download</h3>
+        <p>Press <strong>Merge files</strong>. The progress bar reports each file as it is processed, then a download button appears. The file is generated in memory and handed straight to your browser's downloads folder.</p>
+      </li>
+    </ol>
+
+    <h2>What you can combine</h2>
+    <p>A browser can read some formats natively and cannot read others at all. This is what the merger accepts, and what it does with each type.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Format</th><th>How it is handled</th><th>Result in the PDF</th></tr></thead>
+        <tbody>
+          <tr><td>PDF</td><td>Pages are copied object-by-object</td><td>Identical quality; text stays selectable</td></tr>
+          <tr><td>JPG / JPEG</td><td>Embedded directly, no re-encoding</td><td>One page per image, original quality</td></tr>
+          <tr><td>PNG</td><td>Embedded directly, transparency flattened to white</td><td>One page per image, original quality</td></tr>
+          <tr><td>WebP, GIF, BMP, AVIF</td><td>Decoded by the browser, re-encoded as PNG</td><td>One page per image; visually identical</td></tr>
+          <tr><td>TXT, MD, CSV, JSON, code files</td><td>Rendered as monospaced text with word wrapping</td><td>As many pages as the text needs</td></tr>
+          <tr><td>DOCX, XLSX, PPTX</td><td>Skipped — see below</td><td>Not included</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Why Office files are skipped</h3>
+    <p>Rendering a Word or Excel file faithfully means resolving fonts, styles, tracked changes, embedded charts, and pagination rules — the work that a full office suite does. No browser ships with that engine, and any website that claims to convert your <code>.docx</code> is sending the file to a server to do it there. That would break the one promise this site makes. Export to PDF from your own application first (<strong>File → Save as → PDF</strong>, or <strong>File → Export</strong>), then drop the PDF here.</p>
+  <aside class="ad-wrap pending" aria-label="Advertisement">
+    <!-- AdSense in-article unit - paste your data-ad-slot ID, uncomment,
+         and remove "pending" from the class above:
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle" style="display:block; text-align:center;"
+         data-ad-layout="in-article" data-ad-format="fluid"
+         data-ad-client="ca-pub-5982377866162924" data-ad-slot="0000000000"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </aside>
+    <h2>When merging locally is worth the detour</h2>
+    <p>Most people reach for a PDF merger a few times a year, usually under mild time pressure and usually with documents they would rather not hand to a stranger. A few situations where staying on-device matters more than usual:</p>
+    <ul>
+      <li><strong>Applications and paperwork.</strong> Rental applications, visa files, and loan submissions typically ask for one PDF containing your ID, payslips, and bank statements — a package that identifies you completely.</li>
+      <li><strong>Medical records.</strong> Test results and referral letters are special-category data under the GDPR. Uploading them to an unknown processor is a decision worth avoiding when you do not have to make it.</li>
+      <li><strong>Client and employer work.</strong> Many contracts and internal policies forbid sending company documents to third-party services. A tool that never transmits the file sidesteps the question entirely.</li>
+      <li><strong>Bad or metered connections.</strong> Merging forty photos of receipts is instant on your own machine and painful over a hotel Wi-Fi upload.</li>
+    </ul>
+
+    <h2>Ordering, rotation, and page size</h2>
+    <p>Three behaviours are worth knowing before you merge something important:</p>
+    <ul>
+      <li><strong>Existing PDF pages keep their own dimensions.</strong> If you merge an A4 report with a US Letter invoice, the output contains both sizes. That is deliberate — resizing would either crop content or add margins.</li>
+      <li><strong>Images are placed on a page sized to fit them,</strong> scaled down when they are larger than a standard page so nothing is cut off.</li>
+      <li><strong>Text files use a fixed monospaced layout</strong> with generous margins. Long lines wrap; they are never truncated.</li>
+    </ul>
+    <p>If page sizes need to match exactly — some submission portals insist on it — print each source to A4 first, then merge.</p>
+
+    <div class="tool-cta">
+      <div>
+        <strong>Merged file too large to send?</strong>
+        <p>Run the result through the lossless compressor, or target an exact megabyte limit with the shrink tool.</p>
+      </div>
+      <a class="go" href="compress-pdf.html">Compress the result →</a>
+    </div>
+  </section>
 
   <section class="faq">
     <h2>Frequently asked questions</h2>
     <details>
       <summary>Are my files really private?</summary>
-      <p>Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they're gone. You can even load this page, disconnect from the internet, and it still works.</p>
-    </details>
-    <details>
-      <summary>What's the difference between Compress and Shrink?</summary>
-      <p><strong>Compress</strong> is lossless: it repacks the PDF's internal structure so nothing about the content changes — same text, same image quality. Savings are modest but free. <strong>Shrink</strong> is lossy: it re-renders pages as compressed images to hit a target file size. It saves far more space, but text stops being selectable and fine detail is reduced.</p>
+      <p>Yes. Everything runs in JavaScript inside your browser tab. Your files are read into memory on your own device, processed there, and never uploaded, stored, or transmitted anywhere. Close the tab and they are gone. You can load this page, disconnect from the internet, and it still works.</p>
     </details>
     <details>
       <summary>Is there a file size or page limit?</summary>
-      <p>No hard limit — but since processing happens on your device, very large PDFs (hundreds of pages or hundreds of megabytes) depend on your computer's memory and speed. Most documents finish in seconds.</p>
+      <p>There is no hard limit, but processing uses your device's memory. A few hundred pages or a few hundred megabytes is fine on a modern laptop; a ten-year-old phone will struggle sooner. If a very large merge stalls, split it into two batches and merge the two results.</p>
     </details>
     <details>
       <summary>Can I merge Word or Excel files?</summary>
-      <p>Not directly — faithfully converting Office documents requires software that browsers can't run. Export them to PDF first (File → Save As → PDF), then drop them here alongside your other files.</p>
+      <p>Not directly. Faithfully converting Office documents requires a rendering engine that browsers do not have, and every site that offers it is doing the conversion on a server. Export to PDF first (File → Save as → PDF), then drop the PDF here alongside your other files.</p>
+    </details>
+    <details>
+      <summary>Does merging reduce the quality of my pages?</summary>
+      <p>No. Pages from existing PDFs are copied as objects, not re-rendered, so text stays sharp and selectable and images keep their original encoding. JPEG and PNG files are embedded without re-compression.</p>
+    </details>
+    <details>
+      <summary>Can I remove or reorder pages inside one of the PDFs?</summary>
+      <p>Not in this tool — it works at file level, not page level. Extract or delete the pages you do not want in a PDF reader first, save that as its own file, and then merge.</p>
+    </details>
+    <details>
+      <summary>What happens to passwords, forms, and signatures?</summary>
+      <p>Password-protected files usually cannot be read at all and will fail with an error; remove the password first. Interactive form fields and digital signatures do not survive a merge, because the merged document is a new file — a signature that covered the old document would no longer be valid. Flatten forms before merging if the filled-in values matter.</p>
+    </details>
+    <details>
+      <summary>Does the tool work offline?</summary>
+      <p>Once the page and its two libraries have loaded, yes. You can switch off your connection and keep merging. It is the simplest way to verify the privacy claim for yourself.</p>
     </details>
   </section>
+  <section class="related">
+    <h2>Keep reading</h2>
+    <div class="cards">
+      <a class="cardlink" href="guides/merge-phone-photos-into-one-pdf.html">
+        <span class="eyebrow">Guide</span>
+        <h3>Turn phone photos of documents into one clean PDF</h3>
+        <p>Shooting, ordering, and rotating scans so the finished file looks deliberate rather than improvised.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+      <a class="cardlink" href="guides/pdf-privacy-online-tools.html">
+        <span class="eyebrow">Guide</span>
+        <h3>What happens to a PDF you upload to a converter</h3>
+        <p>Retention windows, sub-processors, and how to check whether a tool is really local.</p>
+        <span class="more">Read the guide →</span>
+      </a>
+    </div>
+  </section>
+
 </div>
 
-<footer>
-  <div class="wrap foot">
-    <div>
-      <strong>The Local PDF</strong> · free PDF utilities, entirely in your browser<br>
-      <span style="font-size:12.5px">
-        <a href="privacy.html" style="color:inherit">Privacy Policy</a> ·
-        <a href="terms.html" style="color:inherit">Terms of Use</a> ·
-        <a href="mailto:hello@thelocalpdf.com" style="color:inherit">Contact</a>
-      </span>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-about">
+        <div class="foot-brand"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span> The Local PDF</div>
+        <p>Free PDF utilities that run entirely inside your browser. No account, no upload queue, no file ever sent to a server. Built and maintained in Portugal since 2025.</p>
+        <div class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> No uploads · no tracking of your files</div>
+      </div>
+      <div class="foot-col">
+        <h3>Tools</h3>
+        <a href="index.html">Merge files into one PDF</a>
+        <a href="compress-pdf.html">Compress a PDF (lossless)</a>
+        <a href="shrink-pdf.html">Shrink a PDF to a target size</a>
+      </div>
+      <div class="foot-col">
+        <h3>Guides</h3>
+        <a href="guides/index.html">All guides</a>
+        <a href="guides/reduce-pdf-size-for-email.html">Email size limits</a>
+        <a href="guides/lossless-vs-lossy-pdf-compression.html">Lossless vs lossy</a>
+        <a href="guides/scanned-pdf-file-size.html">Why scans are huge</a>
+      </div>
+      <div class="foot-col">
+        <h3>Site</h3>
+        <a href="about.html">About &amp; contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:hello@thelocalpdf.com">hello@thelocalpdf.com</a>
+      </div>
     </div>
-    <div class="lock">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      No uploads · no tracking of your files
+    <div class="foot-legal">
+      <span>&copy; 2025–2026 The Local PDF. All processing happens on your device.</span>
+      <span>Built with <a href="https://pdf-lib.js.org/" rel="noopener nofollow">pdf-lib</a> and <a href="https://mozilla.github.io/pdf.js/" rel="noopener nofollow">PDF.js</a>.</span>
     </div>
   </div>
 </footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="assets/js/app.js"></script>

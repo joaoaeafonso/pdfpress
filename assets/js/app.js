@@ -1,6 +1,11 @@
 "use strict";
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+// PDF.js is only loaded on pages that render pages (merge + shrink).
+// The compress page does not load it, so guard the reference - without this
+// the whole script throws a ReferenceError and the page stops working.
+if (typeof pdfjsLib !== "undefined") {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+}
 
 const { PDFDocument, StandardFonts } = PDFLib;
 
